@@ -1,53 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="icon" href="/img/Logo_1.ico" type="image/x-icon" />
     <title>藝識咖啡 做好咖啡的事</title>
+
     <style>
-        *{
+        * {
             box-sizing: border-box;
         }
-        body{
+
+        body {
             margin: 0;
             padding: 0;
             font-family: cursive;
         }
-        .nav{
+
+        .nav {
             width: 100%;
-            height: 50px;
+            padding: 25px 0;
             background-color: transparent;
+            position: fixed;
+            z-index: 99;
+        }
+
+        .menu {
+            margin-left: auto;
             display: flex;
             justify-content: flex-end;
-            position: fixed;
-
         }
-        .bot{
-            width: 100px;
-            height: 50px;
-            background-color:  transparent;
+
+        .bot {
+            font-size: 25px;
+            background-color: rgb(218, 218, 218);
             margin-right: 20px;
             text-align: center;
             line-height: 50px;
-            transition: 0.5s;
+            transition: 0.3s;
         }
+
         .banner {
             width: 100%;
             height: 100vh;
             background-image: url(./img/1.jpg);
-            background-size: cover;
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
-        .bot:hover {
-            color: rgb(255, 255, 255);
-            background-color: rgb(114, 58, 21);
-            width: 200px;
+
+        .bot .nav-link:hover {
+            color: rgb(255, 251, 0) !important;
+            background-color: transparent;
         }
-        a{
+
+        a {
+            text-decoration: none;
+            color: (0, 0, 0);
+        }
+
+        a:hover {
             text-decoration: none;
         }
+
         .a:active {
             color: rgb(18, 163, 42);
         }
@@ -55,18 +74,381 @@
         .bot:visited {
             color: rgb(230, 58, 215);
         }
+
+        .bg_1 {
+            width: 100%;
+            background-color: #E5E5E5;
+        }
+
+        .bg_2 {
+            width: 100%;
+            background-color: #A57C52;
+        }
+
+        .container {
+            padding: 75px 0;
+        }
+
+        .card-title {
+            text-align: center;
+        }
+
+        .card-title_1 {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .card-content {
+            list-style: none;
+        }
+
+        .card-content li {
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .card-content {
+            font-size: 17px;
+        }
+
+        .icon::before {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            left: -40px;
+            top: -5px;
+        }
+
+        .icon:first-child::before {
+            background-image: url('./img/icon1.png');
+        }
+
+        .icon:nth-child(2)::before {
+            background-image: url('./img/icon2.png');
+        }
+
+
+        .icon:nth-child(3)::before {
+            background-image: url('./img/icon3.png');
+        }
+
+        .icon:last-child::before {
+            background-image: url('./img/icon4.png');
+        }
+
+
+        #footer {
+            width: 100%;
+            height: 50px;
+            background-color: #A57C52;
+        }
+
+        .footer-text {
+            line-height: 50px;
+            font-size: 25px;
+        }
+
+        .logo {
+            width: 100px;
+            position: absolute;
+            left: 30px;
+            top: 20px;
+        }
+
+        .logo img {
+            width: 100%;
+        }
+
+        .h4_text_1 {
+            float: left;
+        }
+
+        .h4_text_2 {
+            float: right;
+        }
+
+
+        @media (max-width: 992px) {
+            .bot {
+                margin-left: auto !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bg_1 .justify-content-md-center h1 {
+                text-align: center;
+            }
+
+            .bg_2 .justify-content-md-center h1 {
+                text-align: center;
+            }
+
+        }
     </style>
 </head>
+
 <body>
-    <div class="nav">
-        <a href="#b1"><div class="bot">首頁</div></a>
-        <a href="#b2"><div class="bot">關於我們</div></a>
-        <a href="#b3"><div class="bot">最新消息</div></a>
-        <a href="#b4"><div class="bot">服務項目</div></a>
-        <a href="#b5"><div class="bot">產品 菜單</div></a>
-        <a href="#b6"><div class="bot">交通聯絡資訊</div></a>
-    </div>
-    <div id="b1" class="banner">
-    </div>
+    <section>
+        <div class="logo">
+            <img src="./img/Logo.png" alt="">
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light .bg-transparent fixed-top">
+            <a class="navbar-brand" href="#">
+            </a>
+
+            <!-- 漢堡條 -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="bot active">
+                        <a class="nav-link" href="#b1" style="color:black">首頁</a>
+                    </li>
+
+                    <li class="bot">
+                        <a class="nav-link" href="#b2" style="color:black">關於我們</a>
+                    </li>
+
+                    <li class="bot">
+                        <a class="nav-link" href="#b3" style="color:black">最新消息</a>
+                    </li>
+                    <li class="bot">
+                        <a class="nav-link" href="#b4" style="color:black">服務項目</a>
+                    </li>
+
+                    <li class="bot">
+                        <a class="nav-link" href="#b5" style="color:black">產品</a>
+                    </li>
+
+                    <li class="bot">
+                        <a class="nav-link" href="#b6" style="color:black">交通聯絡資訊</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+        </div>
+        <div id="b1" class="banner">
+        </div>
+    </section>
+
+    <section>
+        <div class="bg_1" id="b2">
+            <div class="container">
+                <div class="row justify-content-md-center ">
+                    <div class="col-md-auto pb-5">
+                        <h1>關於我們</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-md-5 ">
+                        <div class="card" style="width:100%;">
+                            <!-- bootstrap style="width:40% 照片寬度  -->
+                            <img src="./img/2.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3 class="card-title">以聖經的故事講述餐點的咖啡館</h3>
+                                <p class="card-text">傳教士咖啡，是用5種不同產地豆子混合比例，象徵雲遊世界傳教的教士們，而店內餐飲主打「宗教風」。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 offset-md-2">
+                        <div class="card" style="width:100%;">
+                            <iframe height="384" src="https://www.youtube.com/embed/MfbsCsavnf8" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section>
+        <div class="bg_2" id="b3">
+            <div class="container">
+                <div class="row justify-content-md-center ">
+                    <div class="col-md-auto pb-5 ">
+                        <h1>最新消息</h1>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row pb-5 px-5">
+                        <div class="col border border-secondary">
+                            <h2>2020/02/08</h2>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col border border-secondary">
+                            <h4>越南咖啡38元，現做鬆餅買一送一。</h4>
+                        </div>
+                    </div>
+
+                    <div class="row pb-5 px-5">
+                        <div class="col border border-secondary">
+                            <h2>2020/01/24</h2>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col border border-secondary">
+                            <h4>
+                                藝識春節服務不打烊，特色餐點：傳教士咖啡、西班牙脆餅、耶穌套餐。早餐6：00～咖吧18：00，每天每天歡迎您的光臨，祝您 好運鼠不完。</h4>
+                        </div>
+                    </div>
+
+                    <div class="row pb-5 px-5">
+                        <div class="col border border-secondary">
+                            <h2>2019/11/23</h2>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col border border-secondary">
+                            <h4>
+                                慶祝聖誕節暨週年慶買傳教士咖啡豆兩包送雞蛋花色系幸福咖啡杯一組，買三包送兩組。即日起預訂及宅配0970577121陳小姐，一百組咖啡杯送完為止。</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="bg_1" id="b4">
+            <div class="container">
+                <div class="row justify-content-md-center ">
+                    <div class="col-md-auto pb-5">
+                        <h1>服務項目</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-5">
+                        <div class="card" style="width:100%;">
+                            <img src="./img/3.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3 class="card-title">咖啡機保養維修</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-5 offset-md-2">
+                        <div class="card" style="width:100%;">
+                            <img src="./img/4.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3 class="card-title">咖啡車到府服務</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section>
+        <div class="bg_2" id="b5">
+            <div class="container">
+                <div class="row justify-content-md-center ">
+                    <div class="col-md-auto pb-5">
+                        <h1>產品</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-5">
+                        <div class="card" style="width:100%;">
+                            <h2 class="card-title_1">菜單</h2>
+                            <img src="./img/5.jpg" class="..." alt="...">
+                            <div class="card-body">
+                                <h4 class="h4_text_1">
+                                    菜單裡的：耶穌餅、牧羊人可可、聖母玫瑰咖啡，名稱與內涵各具巧思。以聖母玫瑰咖啡為例，選用拿鐵為基底，以玫瑰花瓣代表聖母，撒落在愛心奶泡上頭，以杯就口啜飲時，還能聞到陣陣花香。
+                                </h4>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-0"></div> -->
+                    <div class="col-12 col-md-5 offset-md-2">
+                        <div class="card" style="width:100%;">
+                            <h2 class="card-title_1">傳教士咖啡</h2>
+                            <img src="./img/6.jpg" class="..." alt="...">
+                            <div class="card-body">
+                                <h4 class="h4_text_2">傳教士咖啡
+                                    ※中古歐洲傳教士的秘方※
+                                    咖啡是西方人生活和文化的重要的部分
+                                    傳教士到世界各地傳教時
+                                    所攜帶的咖啡豆品種無法齊全
+                                    但是煮出一杯咖啡
+                                    需要適當的咖啡粉
+                                    和水1︰18的比例
+                                    所以混合各種個豆種
+                                    卻因此發現更
+                                    美味的黃金比例</h4>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section>
+        <div class="bg_1" id="b6">
+            <div class="container">
+                <div class="row justify-content-md-center ">
+                    <div class="col-md-auto pb-5">
+                        <!-- <h1>交通資訊</h1> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-5">
+                        <div class="card" style="width:100%;min-height: 386px">
+                            <div class="card-body">
+                                <h1 class="card-title" style="padding-bottom: 50px">交通聯絡資訊</h1>
+                                <ul class="card-content">
+                                    <li class="icon">08-783-6711</li>
+                                    <li class="card-text icon">屏東縣萬巒鄉萬金村萬德路1號</li>
+                                    <li class="card-text icon">營業時間<br>
+                                        平日上午六點至下午四點<br>
+                                        假日上午六點至下午六點</li>
+                                    <li class="card-text icon">藝識咖啡</li>
+                                </ul>
+                                <!-- <p ></p>
+                                <p class="card-text"></p>
+                                <p class="card-text"></p>
+                                <p class="card-text"></p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-5 offset-md-2">
+                        <div class="card" style="width:100%;">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2127.9192284848264!2d120.60970576673027!3d22.59466621975107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e2379b2f4c015%3A0x3502d8e35511619c!2z6Jed6K2Y5ZKW5ZWh!5e0!3m2!1szh-TW!2stw!4v1587622408915!5m2!1szh-TW!2stw"
+                                height="384" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                                tabindex="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section>
+        <footer id="footer" style="text-align: center;">
+            <div class="footer-text">藝識咖啡　版權所有　2020</div>
+        </footer>
+    </section>
+
+    <!-- JS bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
